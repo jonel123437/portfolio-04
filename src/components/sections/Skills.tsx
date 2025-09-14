@@ -44,10 +44,14 @@ export default function Skills() {
         Skills & Technologies
       </Typography>
 
-      <Box sx={{ maxWidth: 900, width: "100%" }}>
-        <Grid container spacing={4} justifyContent="center">
+      <Box sx={{ maxWidth: 900, width: "100%", px: { xs: 2, sm: 0 } }}>
+        <Grid
+          container
+          spacing={{ xs: 2, sm: 4 }}
+          justifyContent="flex-start" // align all rows left
+        >
           {skillsData.map((skill) => (
-            <Grid key={skill.name} item xs={6} sm={6} md={3}>
+            <Grid key={skill.name} item xs={4} sm={6} md={3}>
               <motion.div
                 initial="hidden"
                 whileInView="visible"

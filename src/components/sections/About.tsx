@@ -37,8 +37,8 @@ export default function About() {
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
-        bgcolor: "background.default", // theme-aware
-    color: "text.primary",
+        bgcolor: "background.default",
+        color: "text.primary",
       }}
     >
       <Container maxWidth="md">
@@ -56,15 +56,15 @@ export default function About() {
         </Typography>
 
         <MuiTimeline
-          position="alternate"
+          position={isSmallScreen ? "right" : "alternate"} // right side for small screens
           sx={{
             "&::before": {
-              display: isSmallScreen ? "none" : "block", // hide line on small screens
+              display: "block",
               content: '""',
               position: "absolute",
-              left: "50%",
-              transform: "translateX(-50%)",
-              height: "70%",
+              left: isSmallScreen ? "20px" : "50%", // left for small screens
+              transform: isSmallScreen ? "none" : "translateX(-50%)",
+              height: {xs: "100%", sm: "65%"},
               borderLeft: "2px solid",
               borderColor: "primary.main",
             },
@@ -76,10 +76,17 @@ export default function About() {
               key={index}
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: false, amount: 0.2 }} // animate every scroll
+              viewport={{ once: false, amount: 0.2 }}
               variants={fadeInUp}
             >
-              {index % 2 === 0 ? (
+              {/* For small screens, all items use the "Right" style */}
+              {isSmallScreen ? (
+                <TimelineItemRight
+                  title={event.title}
+                  date={event.date}
+                  description={event.description}
+                />
+              ) : index % 2 === 0 ? (
                 <TimelineItemLeft
                   title={event.title}
                   date={event.date}

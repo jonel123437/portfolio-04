@@ -22,12 +22,12 @@ export default function TimelineItemLeft({ title, date, description }: TimelineI
             display: "flex",
             alignItems: "flex-start",
             gap: 2,
-            flexDirection: "row-reverse", // dot on the right side
+            flexDirection: "row-reverse",
             "&:hover": { transform: "translateY(-3px)", boxShadow: 4 },
             transition: "transform 0.3s, box-shadow 0.3s",
           }}
         >
-          {/* Dot near spine, hidden on small screens */}
+          {/* Dot near spine, always visible */}
           <Box
             sx={{
               width: 16,
@@ -37,14 +37,13 @@ export default function TimelineItemLeft({ title, date, description }: TimelineI
               flexShrink: 0,
               mt: 0.5,
               ml: "auto",
-              display: { xs: "none", sm: "block" }, // hide on small screens
             }}
           />
 
           {/* Text */}
           <Box
             sx={{
-              textAlign: { xs: "center", sm: "right" }, // responsive text alignment
+              textAlign: { xs: "left", sm: "right" },
               flex: 1,
             }}
           >

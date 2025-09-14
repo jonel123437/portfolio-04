@@ -31,7 +31,7 @@ export default function Projects() {
             {
               title: "Auth System Template",
               description:
-                "A reusable authentication template featuring Next.js with Apollo Client (frontend) and Apollo Server with Prisma + SQL Server (backend). Includes GraphQL API, Google Login integration, and serves as a scalable foundation for future apps requiring secure user management.",
+                "A reusable authentication template providing secure user login and management. Supports Google Login and serves as a scalable foundation for future applications that require authentication and user authorization.",
               techStack: [
                 "Next.js",
                 "Apollo Client",
