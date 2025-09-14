@@ -7,6 +7,7 @@ import { motion, easeOut } from "framer-motion";
 
 // Get basePath from env (works for dev + GitHub Pages)
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
+console.log("BASE PATH:", basePath); 
 
 const skillsData = [
   { name: "Next.js", logo: `${basePath}/img/next-js.svg` },
