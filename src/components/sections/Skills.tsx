@@ -5,25 +5,21 @@ import Grid from "@mui/material/GridLegacy";
 import SkillCard from "@/components/SkillCard";
 import { motion, easeOut } from "framer-motion";
 
-// Get basePath from env (works for dev + GitHub Pages)
-const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
-console.log("BASE PATH:", basePath); 
-
 const skillsData = [
-  { name: "Next.js", logo: `${basePath}/img/next-js.svg` },
-  { name: "React", logo: `${basePath}/img/react-2.svg` },
-  { name: "MUI", logo: `${basePath}/img/mui.svg` },
-  { name: "HTML", logo: `${basePath}/img/html.svg` },
-  { name: "CSS", logo: `${basePath}/img/css.svg` },
-  { name: "Node.js", logo: `${basePath}/img/nodejs-icon.svg` },
-  { name: "NestJS", logo: `${basePath}/img/nestjs.svg` },
-  { name: "GraphQL", logo: `${basePath}/img/graphql.svg` },
-  { name: "SQL Server", logo: `${basePath}/img/sqlserver.svg` },
-  { name: "MongoDB", logo: `${basePath}/img/mongodb.svg` },
-  { name: "TypeScript", logo: `${basePath}/img/typescript.svg` },
-  { name: "JavaScript", logo: `${basePath}/img/js.svg` },
-  { name: "Cypress", logo: `${basePath}/img/cypress.svg` },
-  { name: "git", logo: `${basePath}/img/git.svg` },
+  { name: "Next.js", logo: `/img/next-js.svg` },
+  { name: "React", logo: `/img/react-2.svg` },
+  { name: "MUI", logo: `/img/mui.svg` },
+  { name: "HTML", logo: `/img/html.svg` },
+  { name: "CSS", logo: `/img/css.svg` },
+  { name: "Node.js", logo: `/img/nodejs-icon.svg` },
+  { name: "NestJS", logo: `/img/nestjs.svg` },
+  { name: "GraphQL", logo: `/img/graphql.svg` },
+  { name: "SQL Server", logo: `/img/sqlserver.svg` },
+  { name: "MongoDB", logo: `/img/mongodb.svg` },
+  { name: "TypeScript", logo: `/img/typescript.svg` },
+  { name: "JavaScript", logo: `/img/js.svg` },
+  { name: "Cypress", logo: `/img/cypress.svg` },
+  { name: "git", logo: `/img/git.svg` },
 ];
 
 const fadeInUp = {

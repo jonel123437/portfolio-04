@@ -1,14 +1,10 @@
 /** @type {import('next').NextConfig} */
-const isProd = process.env.NODE_ENV === "production";
-
-const repoName = process.env.NEXT_PUBLIC_BASE_PATH || "/portfolio-04";
-
 const nextConfig = {
-  output: "export",
-  basePath: isProd ? repoName : "",
-  assetPrefix: isProd ? `${repoName}/` : "",
+  output: "export",          // static export
+  basePath: "",              // no subpath
+  assetPrefix: "",           // no prefix needed
   images: {
-    unoptimized: true,
+    unoptimized: true,       // required for static export
   },
 };
 
