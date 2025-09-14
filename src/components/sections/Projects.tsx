@@ -26,7 +26,7 @@ export default function Projects() {
           Projects
         </Typography>
 
-        <Grid container spacing={4} mt={2}>
+        <Grid container spacing={4} mt={2} sx={{ justifyContent: { xs: "center", sm: "flex-start" }, }}>
           {[
             {
               title: "Auth System Template",
@@ -83,7 +83,7 @@ export default function Projects() {
                 "https://github.com/jonel123437?tab=repositories",
             },
           ].map((project) => (
-            <Grid key={project.title} item xs={12} sm={6} md={4}>
+            <Grid key={project.title} item xs={10} sm={6} md={4}>
               <motion.div
                 initial="hidden"
                 whileInView="visible"
