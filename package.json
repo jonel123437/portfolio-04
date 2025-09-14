@@ -5,8 +5,7 @@
   "scripts": {
     "dev": "cross-env NODE_ENV=development next dev --turbopack",
     "build": "cross-env NODE_ENV=production next build --turbopack",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d out",
+    "build:export": "npm run build && next export",
     "start": "next start",
     "lint": "eslint"
   },
