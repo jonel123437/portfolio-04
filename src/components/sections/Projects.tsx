@@ -50,20 +50,14 @@ export default function Projects() {
               repoLink: "https://github.com/jonel123437/gitwrapped",
             },
             {
-              title: "E-commerce Store",
+              title: "Dental Appointment",
               description:
-                "A full-stack e-commerce platform with a landing page, user storefront, and admin dashboard. Admins can add/manage products, while users can browse and purchase items. Integrated Google Login for authentication and PayMongo for secure payments.",
-              techStack: [
-                "React",
-                "Express",
-                "REST API",
-                "MongoDB",
-                "Mongoose",
-                "Google Login",
-                "PayMongo",
-              ],
-              frontendLink: "https://github.com/jonel123437/shopatos-frontend",
-              backendLink: "https://github.com/jonel123437/shopatos-backend",
+                "A school project front-end for a dental appointment system, with separate login, admin, and student views. Built as a static markup site to design the booking flow and dashboard layouts using only HTML, CSS, and JavaScript.",
+              techStack: ["HTML", "CSS", "JavaScript"],
+              liveLink:
+                "https://jonel123437.github.io/Dental_Appointment_Markup/login/login.html",
+              repoLink:
+                "https://github.com/jonel123437/Dental_Appointment_Markup",
             },
             {
               title: "Social App",
