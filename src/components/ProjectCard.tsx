@@ -8,11 +8,15 @@ import {
   Button,
   Chip,
   Stack,
+  Box,
 } from "@mui/material";
+import { formatDuration } from "@/lib/duration";
 
-interface ProjectCardProps {
+export interface ProjectCardProps {
   title: string;
   description: string;
+  role?: string;
+  date?: string;
   frontendLink?: string;
   backendLink?: string;
   liveLink?: string;
@@ -23,6 +27,8 @@ interface ProjectCardProps {
 export default function ProjectCard({
   title,
   description,
+  role,
+  date,
   frontendLink,
   backendLink,
   liveLink,
@@ -30,6 +36,10 @@ export default function ProjectCard({
   techStack = [],
 }: ProjectCardProps) {
   const isSeeMore = title.toLowerCase().includes("see more");
+  const duration = date ? formatDuration(date) : "";
+  const hasActions = isSeeMore
+    ? !!frontendLink
+    : !!(liveLink || repoLink || frontendLink || backendLink);
 
   return (
     <Card
@@ -52,6 +62,28 @@ export default function ProjectCard({
           {title}
         </Typography>
 
+        {role && (
+          <Typography variant="subtitle2" color="primary">
+            {role}
+          </Typography>
+        )}
+
+        {date && (
+          <Typography
+            variant="caption"
+            color="text.secondary"
+            sx={{ display: "block", mb: 1 }}
+          >
+            {date}
+            {duration && (
+              <Box component="span" sx={{ fontWeight: 600 }}>
+                {" · "}
+                {duration}
+              </Box>
+            )}
+          </Typography>
+        )}
+
         <Typography variant="body2" color="text.secondary" paragraph>
           {description}
         </Typography>
@@ -71,9 +103,9 @@ export default function ProjectCard({
         )}
       </CardContent>
 
-      <CardActions>
-        {isSeeMore ? (
-          frontendLink && (
+      {hasActions && (
+        <CardActions>
+          {isSeeMore ? (
             <Button
               size="small"
               href={frontendLink as string} // force string since we know it exists
@@ -82,52 +114,52 @@ export default function ProjectCard({
             >
               See More &gt;
             </Button>
-          )
-        ) : (
-          <>
-            {liveLink && (
-              <Button
-                size="small"
-                href={liveLink}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Live Demo
-              </Button>
-            )}
-            {repoLink && (
-              <Button
-                size="small"
-                href={repoLink}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Code
-              </Button>
-            )}
-            {frontendLink && (
-              <Button
-                size="small"
-                href={frontendLink}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Frontend
-              </Button>
-            )}
-            {backendLink && (
-              <Button
-                size="small"
-                href={backendLink}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Backend
-              </Button>
-            )}
-          </>
-        )}
-      </CardActions>
+          ) : (
+            <>
+              {liveLink && (
+                <Button
+                  size="small"
+                  href={liveLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Live Demo
+                </Button>
+              )}
+              {repoLink && (
+                <Button
+                  size="small"
+                  href={repoLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Code
+                </Button>
+              )}
+              {frontendLink && (
+                <Button
+                  size="small"
+                  href={frontendLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Frontend
+                </Button>
+              )}
+              {backendLink && (
+                <Button
+                  size="small"
+                  href={backendLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Backend
+                </Button>
+              )}
+            </>
+          )}
+        </CardActions>
+      )}
     </Card>
   );
 }

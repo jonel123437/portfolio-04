@@ -10,6 +10,7 @@ import {
 import { Timeline as MuiTimeline } from "@mui/lab";
 import TimelineItemLeft from "../TimelineItemLeft";
 import TimelineItemRight from "../TimelineItemRight";
+import { formatDuration } from "@/lib/duration";
 import { motion, easeOut } from "framer-motion";
 
 const DAS_URL =
@@ -113,6 +114,7 @@ export default function About() {
                 <TimelineItemRight
                   title={event.title}
                   date={event.date}
+                  duration={formatDuration(event.date)}
                   description={event.description}
                   link={event.link}
                 />
@@ -120,6 +122,7 @@ export default function About() {
                 <TimelineItemLeft
                   title={event.title}
                   date={event.date}
+                  duration={formatDuration(event.date)}
                   description={event.description}
                   link={event.link}
                 />
@@ -127,6 +130,7 @@ export default function About() {
                 <TimelineItemRight
                   title={event.title}
                   date={event.date}
+                  duration={formatDuration(event.date)}
                   description={event.description}
                   link={event.link}
                 />

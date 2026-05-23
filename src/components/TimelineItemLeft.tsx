@@ -7,6 +7,7 @@ import { OpenInNew } from "@mui/icons-material";
 interface TimelineItemLeftProps {
   title: string;
   date: string;
+  duration?: string;
   description: string;
   link?: string;
 }
@@ -14,6 +15,7 @@ interface TimelineItemLeftProps {
 export default function TimelineItemLeft({
   title,
   date,
+  duration,
   description,
   link,
 }: TimelineItemLeftProps) {
@@ -63,6 +65,12 @@ export default function TimelineItemLeft({
               sx={{ mb: 1, display: "block" }}
             >
               {date}
+              {duration && (
+                <Box component="span" sx={{ fontWeight: 600 }}>
+                  {" · "}
+                  {duration}
+                </Box>
+              )}
             </Typography>
             <Typography variant="body2" color="text.secondary">
               {description}
