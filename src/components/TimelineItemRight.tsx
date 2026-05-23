@@ -9,9 +9,13 @@ interface TimelineItemRightProps {
   description: string;
 }
 
-export default function TimelineItemRight({ title, date, description }: TimelineItemRightProps) {
+export default function TimelineItemRight({
+  title,
+  date,
+  description,
+}: TimelineItemRightProps) {
   return (
-    <MuiTimelineItem sx={{ '&:before': { flex: 0 } }}>
+    <MuiTimelineItem sx={{ "&:before": { flex: 0 } }}>
       <TimelineContent sx={{ maxWidth: 350, ml: "auto" }}>
         <Paper
           elevation={3}
@@ -46,9 +50,19 @@ export default function TimelineItemRight({ title, date, description }: Timeline
               flex: 1,
             }}
           >
-            <Typography variant="h6" sx={{ fontWeight: 600 }}>{title}</Typography>
-            <Typography variant="caption" color="text.secondary" sx={{ mb: 1, display: "block" }}>{date}</Typography>
-            <Typography variant="body2" color="text.secondary">{description}</Typography>
+            <Typography variant="h6" sx={{ fontWeight: 600 }}>
+              {title}
+            </Typography>
+            <Typography
+              variant="caption"
+              color="text.secondary"
+              sx={{ mb: 1, display: "block" }}
+            >
+              {date}
+            </Typography>
+            <Typography variant="body2" color="text.secondary">
+              {description}
+            </Typography>
           </Box>
         </Paper>
       </TimelineContent>

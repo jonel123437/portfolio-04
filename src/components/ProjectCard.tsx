@@ -68,43 +68,42 @@ export default function ProjectCard({
       </CardContent>
 
       <CardActions>
-  {isSeeMore ? (
-    frontendLink && (
-      <Button
-        size="small"
-        href={frontendLink as string} // force string since we know it exists
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        See More &gt;
-      </Button>
-    )
-  ) : (
-    <>
-      {frontendLink && (
-        <Button
-          size="small"
-          href={frontendLink}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Frontend
-        </Button>
-      )}
-      {backendLink && (
-        <Button
-          size="small"
-          href={backendLink}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Backend
-        </Button>
-      )}
-    </>
-  )}
-</CardActions>
-
+        {isSeeMore ? (
+          frontendLink && (
+            <Button
+              size="small"
+              href={frontendLink as string} // force string since we know it exists
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              See More &gt;
+            </Button>
+          )
+        ) : (
+          <>
+            {frontendLink && (
+              <Button
+                size="small"
+                href={frontendLink}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Frontend
+              </Button>
+            )}
+            {backendLink && (
+              <Button
+                size="small"
+                href={backendLink}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Backend
+              </Button>
+            )}
+          </>
+        )}
+      </CardActions>
     </Card>
   );
 }

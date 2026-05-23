@@ -26,7 +26,12 @@ export default function Projects() {
           Projects
         </Typography>
 
-        <Grid container spacing={4} mt={2} sx={{ justifyContent: { xs: "center", sm: "flex-start" }, }}>
+        <Grid
+          container
+          spacing={4}
+          mt={2}
+          sx={{ justifyContent: { xs: "center", sm: "flex-start" } }}
+        >
           {[
             {
               title: "Auth System Template",
@@ -59,28 +64,29 @@ export default function Projects() {
                 "Google Login",
                 "PayMongo",
               ],
-              frontendLink:
-                "https://github.com/jonel123437/shopatos-frontend",
-              backendLink:
-                "https://github.com/jonel123437/shopatos-backend",
+              frontendLink: "https://github.com/jonel123437/shopatos-frontend",
+              backendLink: "https://github.com/jonel123437/shopatos-backend",
             },
             {
               title: "Social App",
               description:
                 "A full-stack social media platform where users can create posts, add friends, and interact. Features include authentication, friend system, and future messaging functionality.",
-              techStack: ["Next.js", "NestJS", "REST API", "MongoDB", "Mongoose"],
-              frontendLink:
-                "https://github.com/jonel123437/chatter-frontend",
-              backendLink:
-                "https://github.com/jonel123437/chatter-backend",
+              techStack: [
+                "Next.js",
+                "NestJS",
+                "REST API",
+                "MongoDB",
+                "Mongoose",
+              ],
+              frontendLink: "https://github.com/jonel123437/chatter-frontend",
+              backendLink: "https://github.com/jonel123437/chatter-backend",
             },
             // 👇 New "See More" card
             {
               title: "See More Projects",
               description:
                 "Check out my other work and repositories on GitHub for more projects and experiments.",
-              frontendLink:
-                "https://github.com/jonel123437?tab=repositories",
+              frontendLink: "https://github.com/jonel123437?tab=repositories",
             },
           ].map((project) => (
             <Grid key={project.title} item xs={10} sm={6} md={4}>

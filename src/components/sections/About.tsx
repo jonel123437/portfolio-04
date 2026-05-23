@@ -1,6 +1,12 @@
 "use client";
 
-import { Container, Typography, Box, useTheme, useMediaQuery } from "@mui/material";
+import {
+  Container,
+  Typography,
+  Box,
+  useTheme,
+  useMediaQuery,
+} from "@mui/material";
 import { Timeline as MuiTimeline } from "@mui/lab";
 import TimelineItemLeft from "../TimelineItemLeft";
 import TimelineItemRight from "../TimelineItemRight";
@@ -16,15 +22,17 @@ export default function About() {
   const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
 
   const events = [
-    { 
-      title: "First Programming Experience", 
-      date: "2022 - 2024", 
-      description: "First time learning programming languages at school: C, C++, Java, Java GUI, HTML, CSS, JavaScript, as well as database management using SQL, PHP, and phpMyAdmin." 
+    {
+      title: "First Programming Experience",
+      date: "2022 - 2024",
+      description:
+        "First time learning programming languages at school: C, C++, Java, Java GUI, HTML, CSS, JavaScript, as well as database management using SQL, PHP, and phpMyAdmin.",
     },
     {
       title: "First Internship",
       date: "2024-2025",
-      description: "Internship at Sun Asterisk Software Development Inc. was a great experience where I learned a lot about software QA and development workflows. During the last months, I resumed coding, studied project structures, architecture, and explored frameworks."
+      description:
+        "Internship at Sun Asterisk Software Development Inc. was a great experience where I learned a lot about software QA and development workflows. During the last months, I resumed coding, studied project structures, architecture, and explored frameworks.",
     },
   ];
 
@@ -52,7 +60,11 @@ export default function About() {
           paragraph
           sx={{ mb: 8 }}
         >
-          I’m a developer passionate about building user-friendly, scalable, and maintainable web applications. I enjoy learning and applying clean architecture patterns to create robust, modular systems. Continuously exploring new technologies and approaches helps me deliver high-quality software solutions.
+          I’m a developer passionate about building user-friendly, scalable, and
+          maintainable web applications. I enjoy learning and applying clean
+          architecture patterns to create robust, modular systems. Continuously
+          exploring new technologies and approaches helps me deliver
+          high-quality software solutions.
         </Typography>
 
         <MuiTimeline
@@ -64,7 +76,7 @@ export default function About() {
               position: "absolute",
               left: isSmallScreen ? "20px" : "50%", // left for small screens
               transform: isSmallScreen ? "none" : "translateX(-50%)",
-              height: {xs: "100%", sm: "65%"},
+              height: { xs: "100%", sm: "65%" },
               borderLeft: "2px solid",
               borderColor: "primary.main",
             },

@@ -40,20 +40,35 @@ export default function Contact() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: false, amount: 0.3 }}
-          variants={{ ...fadeInUp, visible: { ...fadeInUp.visible, transition: { delay: 0.2 } } }}
+          variants={{
+            ...fadeInUp,
+            visible: { ...fadeInUp.visible, transition: { delay: 0.2 } },
+          }}
         >
           <Typography color="text.secondary" paragraph>
-            Feel free to reach out if you'd like to collaborate or just say hi 👋
+            Feel free to reach out if you'd like to collaborate or just say hi
+            👋
           </Typography>
         </motion.div>
 
         {/* Social Icons with staggered effect */}
-        <Stack direction="row" spacing={2} justifyContent="center" sx={{ mt: 3 }}>
+        <Stack
+          direction="row"
+          spacing={2}
+          justifyContent="center"
+          sx={{ mt: 3 }}
+        >
           {[
             { href: "mailto:jonelescaran@gmail.com", icon: <Email /> },
-            { href: "https://www.linkedin.com/in/jonel-escaran-5939942b1/", icon: <LinkedIn /> },
+            {
+              href: "https://www.linkedin.com/in/jonel-escaran-5939942b1/",
+              icon: <LinkedIn />,
+            },
             { href: "https://github.com/jonel123437", icon: <GitHub /> },
-            { href: "https://www.facebook.com/jonelescaran13", icon: <Facebook /> },
+            {
+              href: "https://www.facebook.com/jonelescaran13",
+              icon: <Facebook />,
+            },
           ].map((item, index) => (
             <motion.div
               key={index}

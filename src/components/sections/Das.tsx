@@ -32,13 +32,13 @@ export default function Das() {
           maxWidth: isSmallScreen ? "95vw" : "62vw",
           height: isSmallScreen ? 500 : 900,
           px: 2,
-          overflowX: "auto",  // horizontal scroll
-          overflowY: "hidden",  // vertical scroll
+          overflowX: "auto", // horizontal scroll
+          overflowY: "hidden", // vertical scroll
         }}
       >
         <iframe
           src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQzIsvYvgSHIaZhExDRN9RNrOd_xIkitK--ks_uU88NCcCUmylN-190emsHM-BZD2D_MPCi5psPzbjV/pubhtml/sheet?headers=false&gid=1289250016"
-          width="100%"       
+          width="100%"
           height={isSmallScreen ? 500 : 800}
           style={{ border: "1px solid #ccc", borderRadius: 8 }}
           title="Daily Attendance Summary"

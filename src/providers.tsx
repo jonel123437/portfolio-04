@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import { ReactNode, useState, useMemo, createContext, useContext } from "react";
 import { ThemeProvider, CssBaseline } from "@mui/material";
@@ -25,7 +25,8 @@ export default function Providers({ children }: { children: ReactNode }) {
     return mode === "light" ? theme.light : theme.dark;
   }, [mode]);
 
-  const toggleMode = () => setMode(prev => (prev === "light" ? "dark" : "light"));
+  const toggleMode = () =>
+    setMode((prev) => (prev === "light" ? "dark" : "light"));
 
   return (
     <ThemeModeContext.Provider value={{ mode, toggleMode }}>

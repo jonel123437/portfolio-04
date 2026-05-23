@@ -24,35 +24,36 @@ export default function Hero() {
       }}
     >
       <Container maxWidth="md" sx={{ textAlign: "center" }}>
-        <Typography 
-          variant="h2" 
-          gutterBottom 
-          sx={{ 
-            fontWeight: 700, 
-            mb: 3, 
-            fontSize: { xs: "3.7rem", sm: "4rem" } // smaller on SP
+        <Typography
+          variant="h2"
+          gutterBottom
+          sx={{
+            fontWeight: 700,
+            mb: 3,
+            fontSize: { xs: "3.7rem", sm: "4rem" }, // smaller on SP
           }}
         >
           Hi, I'm Jonel 👋
         </Typography>
 
-        <Typography 
-          variant="h5" 
-          color="text.secondary" 
-          paragraph 
-          sx={{ 
-            mb: 5, 
-            lineHeight: { xs: 1.4, sm: 1.6 }, 
-            fontSize: { xs: "1rem", sm: "1.5rem" } // responsive
+        <Typography
+          variant="h5"
+          color="text.secondary"
+          paragraph
+          sx={{
+            mb: 5,
+            lineHeight: { xs: 1.4, sm: 1.6 },
+            fontSize: { xs: "1rem", sm: "1.5rem" }, // responsive
           }}
         >
-          A passionate developer creating modern, efficient, and user-friendly web applications.
+          A passionate developer creating modern, efficient, and user-friendly
+          web applications.
         </Typography>
 
-        <Button 
-          variant="contained" 
-          color="primary" 
-          size="large" 
+        <Button
+          variant="contained"
+          color="primary"
+          size="large"
           onClick={handleScroll}
           sx={{
             px: { xs: 3, sm: 4 }, // smaller padding on SP

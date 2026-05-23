@@ -74,11 +74,13 @@ export default function Navbar() {
           </Box>
 
           {/* Desktop Links */}
-          <Box sx={{ display: { xs: "none", md: "flex" }, alignItems: "center" }}>
-            {navLinks.map(link => (
+          <Box
+            sx={{ display: { xs: "none", md: "flex" }, alignItems: "center" }}
+          >
+            {navLinks.map((link) => (
               <Button
                 key={link.href}
-                onClick={e => handleScroll(e, link.href)}
+                onClick={(e) => handleScroll(e, link.href)}
                 sx={{
                   color: "text.primary",
                   fontWeight: 500,
@@ -112,12 +114,15 @@ export default function Navbar() {
           >
             <Box sx={{ width: 200 }}>
               <List>
-                {navLinks.map(link => (
+                {navLinks.map((link) => (
                   <ListItemButton
                     key={link.href}
                     component="a"
-                    onClick={e => handleScroll(e, link.href)}
-                    sx={{ color: "text.primary", "&:hover": { color: "primary.main" } }}
+                    onClick={(e) => handleScroll(e, link.href)}
+                    sx={{
+                      color: "text.primary",
+                      "&:hover": { color: "primary.main" },
+                    }}
                   >
                     <ListItemText primary={link.label} />
                   </ListItemButton>
