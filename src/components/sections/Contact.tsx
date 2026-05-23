@@ -16,7 +16,10 @@ import {
 import { LinkedIn, GitHub, Facebook, Send } from "@mui/icons-material";
 import { motion, easeOut } from "framer-motion";
 
-const WEB3FORMS_ACCESS_KEY = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY ?? "";
+// Web3Forms access key is public (safe to commit); .env.local overrides it for local dev.
+const WEB3FORMS_ACCESS_KEY =
+  process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY ||
+  "4040a0a6-8190-4a86-a810-430b9268a307";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 30 },
