@@ -6,7 +6,16 @@
       "Bash(xargs -r rm -rf)",
       "Bash(rm -rf node_modules && npm install 2>&1 | tail -15)",
       "Bash(npx prettier *)",
-      "Bash(npm pkg *)"
+      "Bash(npm pkg *)",
+      "Bash(npm run *)",
+      "Bash(node -e \"console.log\\(JSON.stringify\\(require\\('./package.json'\\).scripts, null, 2\\)\\)\")",
+      "Bash(npm -v)",
+      "Bash(node -e \"console.log\\(process.platform, process.arch, require\\('os'\\).release\\(\\)\\)\")",
+      "Bash(node -e \"console.log\\(require\\('next/package.json'\\).version\\)\")",
+      "Bash(node -e \"const l=require\\('./package-lock.json'\\); const k=Object.keys\\(l.packages||{}\\).find\\(k=>k.includes\\('swc-linux-x64-gnu'\\)\\); console.log\\(k\\); console.log\\(JSON.stringify\\(l.packages[k],null,2\\)\\)\")",
+      "Bash(npm config *)",
+      "Bash(cd /home/jonel/portfolio *)",
+      "Read(//tmp/**)"
     ],
     "additionalDirectories": [
       "/home/jonel/portfolio/node_modules",

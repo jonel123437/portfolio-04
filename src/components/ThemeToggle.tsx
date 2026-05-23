@@ -1,20 +1,31 @@
 "use client";
 
+import { useColorScheme } from "@mui/material/styles";
 import { IconButton } from "@mui/material";
 import { Brightness4, Brightness7 } from "@mui/icons-material";
-import { useThemeMode } from "@/providers";
 
 export default function ThemeToggle() {
-  const { mode, toggleMode } = useThemeMode();
+  const { mode, systemMode, setMode } = useColorScheme();
 
-  const handleClick = () => {
-    console.log("Theme toggle clicked! Current mode:", mode);
-    toggleMode();
-  };
+  // `mode` is undefined until mounted; placeholder avoids a hydration mismatch.
+  if (!mode) {
+    return (
+      <IconButton color="inherit" disabled aria-label="Toggle theme">
+        <Brightness4 sx={{ opacity: 0 }} />
+      </IconButton>
+    );
+  }
+
+  const resolved = mode === "system" ? systemMode : mode;
+  const next = resolved === "dark" ? "light" : "dark";
 
   return (
-    <IconButton color="inherit" onClick={handleClick}>
-      {mode === "dark" ? <Brightness7 /> : <Brightness4 />}
+    <IconButton
+      color="inherit"
+      onClick={() => setMode(next)}
+      aria-label={`Switch to ${next} mode`}
+    >
+      {resolved === "dark" ? <Brightness7 /> : <Brightness4 />}
     </IconButton>
   );
 }
