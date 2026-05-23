@@ -15,7 +15,10 @@
       "Bash(node -e \"const l=require\\('./package-lock.json'\\); const k=Object.keys\\(l.packages||{}\\).find\\(k=>k.includes\\('swc-linux-x64-gnu'\\)\\); console.log\\(k\\); console.log\\(JSON.stringify\\(l.packages[k],null,2\\)\\)\")",
       "Bash(npm config *)",
       "Bash(cd /home/jonel/portfolio *)",
-      "Read(//tmp/**)"
+      "Read(//tmp/**)",
+      "Bash(npx eslint *)",
+      "Bash(echo \"exit: $?\")",
+      "Bash(git check-ignore *)"
     ],
     "additionalDirectories": [
       "/home/jonel/portfolio/node_modules",

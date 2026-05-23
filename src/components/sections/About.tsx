@@ -24,15 +24,21 @@ export default function About() {
   const events = [
     {
       title: "First Programming Experience",
-      date: "2022 - 2024",
+      date: "2022 - 2025",
       description:
-        "First time learning programming languages at school: C, C++, Java, Java GUI, HTML, CSS, JavaScript, as well as database management using SQL, PHP, and phpMyAdmin.",
+        "Studied Computer Engineering at CITE Technical Institute, where I first learned programming — C, C++, Java, Java GUI, HTML, CSS, and JavaScript — along with database management using SQL, PHP, and phpMyAdmin.",
     },
     {
-      title: "First Internship",
-      date: "2024-2025",
+      title: "Software QA Internship",
+      date: "Aug 2024 - Oct 2025",
       description:
-        "Internship at Sun Asterisk Software Development Inc. was a great experience where I learned a lot about software QA and development workflows. During the last months, I resumed coding, studied project structures, architecture, and explored frameworks.",
+        "Joined Sun Asterisk Software Development, Inc. as a QA intern on the Sun* HRIS and Tokyu Roobby projects. Gained hands-on experience across the full SDLC — writing test cases, performing manual, automation, regression, and API testing, and reviewing pull requests on GitHub.",
+    },
+    {
+      title: "Web Developer Internship",
+      date: "Oct 2025 - May 2026",
+      description:
+        "Transitioned from QA to development on the Sun* HRIS project. Progressed from frontend tasks and bug fixes to backend and full-stack work — handling database migrations, API creation, and frontend integration while consistently delivering fixes on time.",
     },
   ];
 
@@ -70,13 +76,15 @@ export default function About() {
         <MuiTimeline
           position={isSmallScreen ? "right" : "alternate"} // right side for small screens
           sx={{
+            position: "relative",
             "&::before": {
               display: "block",
               content: '""',
               position: "absolute",
+              top: 0,
               left: isSmallScreen ? "20px" : "50%", // left for small screens
               transform: isSmallScreen ? "none" : "translateX(-50%)",
-              height: { xs: "100%", sm: "65%" },
+              height: "100%", // spans the full timeline, grows with each item
               borderLeft: "2px solid",
               borderColor: "primary.main",
             },
