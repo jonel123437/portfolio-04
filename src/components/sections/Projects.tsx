@@ -34,22 +34,20 @@ export default function Projects() {
         >
           {[
             {
-              title: "Auth System Template",
+              title: "git.wrapped",
               description:
-                "A reusable authentication template providing secure user login and management. Supports Google Login and serves as a scalable foundation for future applications that require authentication and user authorization.",
+                "Spotify Wrapped, but for your code. Connect your GitHub account and turn a year of commits, pull requests, and reviews into beautiful, shareable cards — complete with personality insights, top languages, streaks, and a public profile page.",
               techStack: [
                 "Next.js",
-                "Apollo Client",
-                "Apollo Server",
-                "Prisma",
-                "SQL Server",
-                "GraphQL",
-                "Google Login",
+                "React",
+                "TypeScript",
+                "Tailwind CSS",
+                "NextAuth",
+                "GitHub OAuth",
+                "GitHub API",
               ],
-              frontendLink:
-                "https://github.com/jonel123437/-FE-SQL--login-system",
-              backendLink:
-                "https://github.com/jonel123437/-BE-SQL--login-system",
+              liveLink: "https://gitwrapped-tau.vercel.app/",
+              repoLink: "https://github.com/jonel123437/gitwrapped",
             },
             {
               title: "E-commerce Store",
@@ -102,6 +100,8 @@ export default function Projects() {
                   techStack={project.techStack}
                   frontendLink={project.frontendLink}
                   backendLink={project.backendLink}
+                  liveLink={project.liveLink}
+                  repoLink={project.repoLink}
                 />
               </motion.div>
             </Grid>

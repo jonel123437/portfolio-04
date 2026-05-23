@@ -15,6 +15,8 @@ interface ProjectCardProps {
   description: string;
   frontendLink?: string;
   backendLink?: string;
+  liveLink?: string;
+  repoLink?: string;
   techStack?: string[];
 }
 
@@ -23,6 +25,8 @@ export default function ProjectCard({
   description,
   frontendLink,
   backendLink,
+  liveLink,
+  repoLink,
   techStack = [],
 }: ProjectCardProps) {
   const isSeeMore = title.toLowerCase().includes("see more");
@@ -81,6 +85,26 @@ export default function ProjectCard({
           )
         ) : (
           <>
+            {liveLink && (
+              <Button
+                size="small"
+                href={liveLink}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Live Demo
+              </Button>
+            )}
+            {repoLink && (
+              <Button
+                size="small"
+                href={repoLink}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Code
+              </Button>
+            )}
             {frontendLink && (
               <Button
                 size="small"

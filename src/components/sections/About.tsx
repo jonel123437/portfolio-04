@@ -12,6 +12,9 @@ import TimelineItemLeft from "../TimelineItemLeft";
 import TimelineItemRight from "../TimelineItemRight";
 import { motion, easeOut } from "framer-motion";
 
+const DAS_URL =
+  "https://docs.google.com/spreadsheets/d/e/2PACX-1vQzIsvYvgSHIaZhExDRN9RNrOd_xIkitK--ks_uU88NCcCUmylN-190emsHM-BZD2D_MPCi5psPzbjV/pubhtml/sheet?headers=false&gid=1289250016";
+
 const fadeInUp = {
   hidden: { opacity: 0, y: 30 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: easeOut } },
@@ -21,7 +24,12 @@ export default function About() {
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
 
-  const events = [
+  const events: {
+    title: string;
+    date: string;
+    description: string;
+    link?: string;
+  }[] = [
     {
       title: "First Programming Experience",
       date: "2022 - 2025",
@@ -33,6 +41,7 @@ export default function About() {
       date: "Aug 2024 - Oct 2025",
       description:
         "Joined Sun Asterisk Software Development, Inc. as a QA intern on the Sun* HRIS and Tokyu Roobby projects. Gained hands-on experience across the full SDLC — writing test cases, performing manual, automation, regression, and API testing, and reviewing pull requests on GitHub.",
+      link: DAS_URL,
     },
     {
       title: "Web Developer Internship",
@@ -105,18 +114,21 @@ export default function About() {
                   title={event.title}
                   date={event.date}
                   description={event.description}
+                  link={event.link}
                 />
               ) : index % 2 === 0 ? (
                 <TimelineItemLeft
                   title={event.title}
                   date={event.date}
                   description={event.description}
+                  link={event.link}
                 />
               ) : (
                 <TimelineItemRight
                   title={event.title}
                   date={event.date}
                   description={event.description}
+                  link={event.link}
                 />
               )}
             </motion.div>

@@ -1,18 +1,21 @@
 "use client";
 
 import { TimelineItem as MuiTimelineItem, TimelineContent } from "@mui/lab";
-import { Typography, Paper, Box } from "@mui/material";
+import { Typography, Paper, Box, Link } from "@mui/material";
+import { OpenInNew } from "@mui/icons-material";
 
 interface TimelineItemLeftProps {
   title: string;
   date: string;
   description: string;
+  link?: string;
 }
 
 export default function TimelineItemLeft({
   title,
   date,
   description,
+  link,
 }: TimelineItemLeftProps) {
   return (
     <MuiTimelineItem sx={{ "&:before": { flex: 0 } }}>
@@ -64,6 +67,24 @@ export default function TimelineItemLeft({
             <Typography variant="body2" color="text.secondary">
               {description}
             </Typography>
+            {link && (
+              <Link
+                href={link}
+                target="_blank"
+                rel="noopener noreferrer"
+                variant="body2"
+                sx={{
+                  mt: 1,
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: 0.5,
+                  fontWeight: 500,
+                }}
+              >
+                View Attendance Summary
+                <OpenInNew sx={{ fontSize: 16 }} />
+              </Link>
+            )}
           </Box>
         </Paper>
       </TimelineContent>
